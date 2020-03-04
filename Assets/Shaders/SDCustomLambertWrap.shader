@@ -18,12 +18,14 @@ Shader "Custom/SDLambertWrap"
 
             #pragma surface surf Lambert
 
-            half4 LightingLambertWrap(SurfaceOutput s, hal3 lightDir. half atten)
+            half4 LightingLambertWrap(SurfaceOutput s, half3 lightDir. half atten)
             {
-                half NdotL =dot(s.Normal, lightDir);
+                half NdotL = dot(s.Normal, lightDir);
+                half diff = NdotL * 0.5 + 0.5;
                 half4 = c;
-                c.rgb = c.Albedo * LightColor0.rgb * NdotL * atten;
+                c.rgb = c.Albedo * _LightColor0.rgb * diffwrap * atten;
                 c.a = s.Alpha;
+                return c;
             }
                 
             half4 _Albedo;
