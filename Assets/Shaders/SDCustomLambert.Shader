@@ -31,7 +31,7 @@ Shader "Custom/SDRimLight"
             }
 
                 
-            half4 _albedo;
+            half4 _Albedo;
             float _RimPower;
 
             struct Input
